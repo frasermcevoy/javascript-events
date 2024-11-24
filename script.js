@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const keyDisplay = document.getElementById('keyDisplay');
     const form = document.getElementById('simpleForm');
     const formMessage = document.getElementById('formMessage');
+    const focusBlurInput = document.getElementById('focusBlurInput');
+    const focusBlurMessage = document.getElementById('focusBlurMessage');
 
 
     if (button) {
@@ -35,6 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 formMessage.textContent = 'Good choice!';
                 formMessage.classList.remove('hidden'); 
             }
+        });
+    }
+    if (focusBlurInput && focusBlurMessage) {
+        focusBlurInput.addEventListener('focus', function () {
+            focusBlurMessage.textContent = 'Box is Blue.';
+        });
+
+        focusBlurInput.addEventListener('blur', function () {
+            focusBlurMessage.textContent = "Box isn't blue";
         });
     }
 });

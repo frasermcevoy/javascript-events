@@ -12,19 +12,20 @@
         <h1>Javascript Events</h1>
     </header>
 <main>
-    <h2>Mouse Event</h2>
+
     <section>
+    <h2>Mouse Event</h2>
     Hover to demonstrate mouse events:
     <br>
     <button id="clickButton">Here's the button</button>
     </section>
-    <br>
+    
     <section>
     <h2>Keyboard Events</h2>
     <input id="keyboardInput" type="text" placeholder="Typing..">
     <p>Last Key Pressed: <span id="keyDisplay">None</span></p>
     </section>
-    <br>
+    
     <section>
     <h2>Form Events</h2>
     <form id="simpleForm">
@@ -33,7 +34,13 @@
         <button type="submit">Submit</button>
     </form>
     <p id="formMessage" class="hidden">Many to choose from</p>
+    </section>
 
+    <section>
+        <h2>Focus and Blur Events</h2>
+        <p>The form box will turn blue in Chrome when clicked to focus.</p>
+        <input id="focusBlurInput" type="text" placeholder="Click to see" />
+        <p id="focusBlurMessage">Click to see focus event</p>
     </section>
 </main>
 </body>
