@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const formMessage = document.getElementById('formMessage');
     const focusBlurInput = document.getElementById('focusBlurInput');
     const focusBlurMessage = document.getElementById('focusBlurMessage');
+    const buttonContainer = document.getElementById('buttonContainer');
+    const delegationMessage = document.getElementById('delegationMessage');
 
 
     if (button) {
@@ -46,6 +48,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         focusBlurInput.addEventListener('blur', function () {
             focusBlurMessage.textContent = "Box isn't blue";
+        });
+    }
+    if (buttonContainer && delegationMessage) {
+        buttonContainer.addEventListener('click', function (event) {
+            if (event.target.tagName === 'BUTTON') {
+                const message = event.target.dataset.message;
+                delegationMessage.textContent = message;
+            }
         });
     }
 });
