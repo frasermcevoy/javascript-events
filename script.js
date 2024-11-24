@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const button = document.getElementById('clickButton');
     const inputField = document.getElementById('keyboardInput');
     const keyDisplay = document.getElementById('keyDisplay');
+    const form = document.getElementById('simpleForm');
+    const formMessage = document.getElementById('formMessage');
 
 
     if (button) {
@@ -24,6 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (inputField && keyDisplay) {
         inputField.addEventListener('keydown', function (event) {
             keyDisplay.textContent = event.key;
+        });
+    }
+    if (form) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+            if (formMessage) {
+                formMessage.textContent = 'Good choice!';
+                formMessage.classList.remove('hidden'); 
+            }
         });
     }
 });
